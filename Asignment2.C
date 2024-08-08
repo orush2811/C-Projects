@@ -2,8 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-void freeMemory(int *arr){
-    free(arr);
+void freeMemory(void *arr){
+    if(arr!=NULL){
+free(arr);
+}
+arr=NULL;
 }
 
 
