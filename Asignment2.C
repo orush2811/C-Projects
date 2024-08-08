@@ -2,23 +2,27 @@
 #include <stdlib.h>
 #include <string.h>
 
-void freeMemory(void *arr){
-    if(arr!=NULL){
-free(arr);
-}
-arr=NULL;
+void freeMemory(void *arr)
+{
+    if (arr != NULL)
+    {
+        free(arr);
+    }
+    arr = NULL;
 }
 
-
-int doubleArraySize(int **ptr,int size){
-    int newSize=size*2;
-    int *temp=(int*)realloc(*ptr,newSize*sizeof(int));
-   if(temp==NULL){
-    return -1;
-   }
-    *ptr=temp;
-    for(int i=size;i<newSize;i++){
-        (*ptr)[i]=0;
+int doubleArraySize(int **ptr, int size)
+{
+    int newSize = size * 2;
+    int *temp = (int *)realloc(*ptr, newSize * sizeof(int));
+    if (temp == NULL)
+    {
+        return -1;
+    }
+    *ptr = temp;
+    for (int i = size; i < newSize; i++)
+    {
+        (*ptr)[i] = 0;
     }
 }
 
