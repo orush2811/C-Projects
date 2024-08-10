@@ -26,7 +26,7 @@ int doubleArraySize(int **ptr, int size)
     }
 }
 
-void printArr(int *arr, int size)
+void displayArray(int *arr, int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -52,4 +52,16 @@ int createArray(int size)
         return NULL;
     }
     return *p;
+}
+
+int main(){
+    int size=5;
+    int *arr[5];
+    createArray(5);
+    initArray((int*)arr,5);
+    displayArray((int*)arr,5);
+    doubleArraySize(arr,5);
+    freeMemory(arr);
+
+    return 0;
 }
